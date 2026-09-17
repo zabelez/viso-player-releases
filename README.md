@@ -1,20 +1,22 @@
 <p align="center">
-  <img src="images/logo.png" alt="NDI Player" width="280">
+  <img src="images/logo.png" alt="Viso Player" width="280">
 </p>
 
-<h1 align="center">NDI Player</h1>
+<h1 align="center">Viso Player</h1>
 
 <p align="center"><strong>Any screen. Any source. Always live.</strong></p>
 
-Turn an ordinary PC into a dedicated [NDI](https://ndi.video/) video player.
+Turn an ordinary PC into a dedicated Viso video player.
 
 Power it on. It finds sources on your network. Every screen in the room comes alive — no desktop, no login, no window to drag into place. A browser is the only remote you need.
 
-NDI Player is built for control rooms, classrooms, houses of worship, studios, and any space that should show live video the moment the lights go on. One machine. One display or many. HDMI, DisplayPort, or a laptop panel. The same installer.
+Viso Player is built for control rooms, classrooms, houses of worship, studios, and any space that should show live video the moment the lights go on. One machine. One display or many. HDMI, DisplayPort, or a laptop panel. The same installer.
 
-This project is **in active development**. If it does not work on your hardware, [open an issue](https://github.com/zabelez/ndi-player-releases/issues) with what you used and what you saw.
+Sources come from [Viso Gateway](https://github.com/zabelez/viso-gateway-releases) and other Viso apps on the LAN. The player is the last hop to the screen.
 
-Current version: **0.23.0**.
+This project is **in active development**. If it does not work on your hardware, [open an issue](https://github.com/zabelez/viso-player-releases/issues) with what you used and what you saw.
+
+Current version: **0.24.0**. This release must be installed from the **USB image**. **Device → Updates** cannot apply 0.24.0 on a previous install.
 
 ## Open the UI
 
@@ -27,20 +29,30 @@ The interface has five tabs: **Displays**, **System Health**, **Network**, **Dev
 ## Displays
 
 <p align="center">
-  <img src="images/displays.png" alt="Displays tab — one card per monitor, NDI sources on the right" width="820">
+  <img src="images/displays.png" alt="Displays tab — one card per monitor, Viso sources on the right" width="820">
 </p>
 
-Each connected monitor has its own card. You can send a different NDI source to each screen (Full NDI, HX, HX2, and HX3).
+Each connected monitor has its own card. You can send a different Viso source to each screen.
 
 On the card you can:
 
-- **Name the output.** Click the title. That name appears on Displays, Device, the SPACE overlay, and Companion. Clear it to restore the default label (HDMI 1, Built-in Display, and so on).
+- **Name the output.** Click the title. That name appears on Displays, Device, the SPACE overlay, and the HTTP API. Clear it to restore the default label (HDMI 1, Built-in Display, and so on).
 - **Turn the head on or off** without unplugging the cable.
 - **Pick the source**, then choose highest or lowest bandwidth and mute or unmute audio on that screen.
 - **Set the output mode.** Auto uses the monitor’s preferred timing. You can also pick a listed mode or enter a custom width, height, frame rate, and progressive or interlaced scan.
-- **Sleep the monitor** after 5, 10, 15, or 30 minutes with no NDI video, or leave sleep off.
-- **Lay out the picture.** Crop, rotate, and fit (original, contain, stretch, cover) with a 3×3 alignment grid.
-- **Set a backup** if the main source drops: a still image, a looping video, or another NDI source. You can set the delay, audio, fit, and alignment.
+- **Sleep the monitor** after 5, 10, 15, or 30 minutes with no Viso video, or leave sleep off.
+- **Lay out the picture.** Crop, rotate, and fit (original, fit, stretch, fill) with a 3×3 alignment grid.
+- **Set a backup** if the main source drops: a still image, a looping video, or another Viso source. You can set the delay, audio, fit, and alignment.
+
+<p align="center">
+  <img src="images/display-source.png" alt="Source, bandwidth, audio, and custom output mode" width="280">
+  <img src="images/display-sleep.png" alt="Monitor sleep after 5, 10, 15, or 30 minutes" width="280">
+</p>
+
+<p align="center">
+  <img src="images/display-layout.png" alt="Crop, rotation, fit, and 3×3 alignment" width="280">
+  <img src="images/display-backup.png" alt="Backup image, video, or Viso source" width="280">
+</p>
 
 Next to the cards:
 
@@ -62,28 +74,34 @@ From **Maintenance** you can restart playback, reboot the machine, power it off,
 ## Network
 
 <p align="center">
-  <img src="images/network.png" alt="Network tab — Ethernet, Wi-Fi, hostname, and NDI discovery" width="820">
+  <img src="images/network.png" alt="Network tab — Ethernet, Wi-Fi, hostname, and Viso discovery" width="820">
 </p>
 
 - **Ethernet** — DHCP or a fixed IPv4 address, gateway, and DNS.
 - **Wi-Fi** — scan, connect, disconnect, or forget. Open and WPA2 networks. DHCP or a fixed address on the same adapter.
 - **Hostname** — the name used for `https://<name>.local`. It must be unique on the LAN.
-- **NDI Communication** — groups, extra IPs, an optional Discovery Server, and a toggle for sources running on this player. Apply restarts playback so the new discovery settings take effect.
+- **Viso Communication** — groups, extra IPs, an optional Discovery Server, and a toggle for sources running on this player. Apply restarts playback so the new discovery settings take effect.
 
 ## Device
 
 <p align="center">
-  <img src="images/device.png" alt="Device tab — identity, language, license, support, and updates" width="820">
+  <img src="images/device.png" alt="Device tab — identity, language, license, support, and password" width="820">
 </p>
 
 - **Identity** — hostname, address, version, serial, and Device UUID.
 - **Language** — English, Portuguese (Brazil), French, or Dutch. The web UI and on-screen overlays follow this setting.
 - **Temperature** — Celsius or Fahrenheit.
 - **Operator password** — change it or log out. This is not the SSH or root password.
-- **License** — email **contact@sysontech.com** with the Device UUID, paste the token, then Activate.
+- **License** — email **contact@sysontech.com** with the Device UUID, paste the token, then Activate. A 0.24.0 token is required; a token from an earlier player will not activate.
 - **Remote support** — start a time-limited session with a one-time code from support.
 - **Updates** — check for a signed update and apply it. See [Install and update](#install-and-update).
-- **Hardware and software** — processor, memory, graphics, storage, OS, and kernel.
+- **Hardware** — processor, memory, graphics, and storage.
+
+<p align="center">
+  <img src="images/device-language.png" alt="Language: English, French, Dutch, Portuguese (Brazil)" width="280">
+  <img src="images/device-temperature.png" alt="Temperature in Celsius or Fahrenheit" width="280">
+  <img src="images/device-support.png" alt="Remote support one-time code" width="280">
+</p>
 
 ## API
 
@@ -91,85 +109,53 @@ From **Maintenance** you can restart playback, reboot the machine, power it off,
   <img src="images/api.png" alt="API tab — token and HTTP endpoint catalog" width="820">
 </p>
 
-The **API** tab is for scripts and other systems, including Companion.
+The **API** tab is for scripts and other systems.
 
 Generate a token here. It is shown once. Send it as `Authorization: Bearer`. The tab also lists every HTTP command on this player.
 
-## Companion
-
-<p align="center">
-  <img src="images/companion.png" alt="Companion XY matrix — NDI sources as columns, player outputs as rows, green crosspoints for active routes" width="820">
-</p>
-
-To route sources from a Stream Deck or other Companion surface, use the module in [ndi-player-companion](https://github.com/zabelez/ndi-player-companion). It is not in the Bitfocus store.
-
-The module talks to up to eight players over HTTPS. Columns are NDI sources. Rows are the outputs on those players. A crosspoint sends that source to that output. Green is live. Click a green button again to clear that output. The arrows on the right scroll when there are more sources or outputs than buttons.
-
-**Setup**
-
-1. On each player, create a token under **API → API token**.
-2. Download the module package from the [companion releases](https://github.com/zabelez/ndi-player-companion/releases).
-3. In Companion 5: **Modules → Import module package**, then add an **NDI Player** connection.
-4. Set **Module Version** to the version you imported, not **Dev version**.
-5. Fill each slot with host or IP and API token. Leave a host empty to skip that slot.
-
-**What you can do from Companion**
-
-- Route any source to any output from the matrix page.
-- Power off one player or all listed players.
-- See hostname, CPU, RAM, and temperature. Colors change when load is high or a player is unreachable.
-- Check for updates, update one player, or update every listed player that is behind.
-- Rediscover NDI sources and rebuild the matrix.
-
-The same release includes ready pages for matrix, power, health, CPU, memory, temperature, status, and auxiliary. Import a page and remap it to your NDI Player connection.
-
-For module issues, use [ndi-player-companion](https://github.com/zabelez/ndi-player-companion/issues).
-
 ## Install and update
 
-New machines install **0.22.0** from the USB image, then apply **0.23.0** from **Device → Updates**.
+**0.24.0 must be installed from the USB image.** Do not use **Device → Updates** from a previous version. That path does not apply 0.24.0. Write the ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk.
 
-Do not use **Device → Updates** to reach 0.22.0 from an older version. That path does not apply 0.22.0 correctly. Write the ISO, boot from USB, and choose **Install NDI Player**. Installing erases the internal disk.
-
-If the player is already on **0.22.0** or **0.22.1**, apply **0.23.0** from **Device → Updates**. You do not need another USB install. See [0.23.0](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.23.0).
+After this USB install, later versions can use **Device → Updates** as usual.
 
 ### New machine
 
-1. Download **`ndi-player-0.22.0.iso`** and **`ndi-player-0.22.0.iso.sha256`** from [Releases](https://github.com/zabelez/ndi-player-releases/releases/tag/v0.22.0).
+1. Download **`viso-player-0.24.0.iso`** and **`viso-player-0.24.0.iso.sha256`** from [Releases](https://github.com/zabelez/viso-player-releases/releases/tag/v0.24.0).
 2. Verify the download:
 
    ```bash
    # Linux
-   sha256sum -c ndi-player-0.22.0.iso.sha256
+   sha256sum -c viso-player-0.24.0.iso.sha256
 
    # macOS
-   shasum -a 256 -c ndi-player-0.22.0.iso.sha256
+   shasum -a 256 -c viso-player-0.24.0.iso.sha256
    ```
 
 3. Write the image to a USB stick (Balena Etcher; Rufus **DD Image** on Windows).
-4. Boot from USB. A 15-second menu appears. **Try NDI Player** (the default) does not change the internal disk. **Install NDI Player** erases it. If you do nothing, Try starts.
+4. Boot from USB. A 15-second menu appears. **Try Viso Player** (the default) does not change the internal disk. **Install Viso Player** erases it. If you do nothing, Try starts.
 5. Connect network and a monitor. Press **SPACE** for the IP.
 6. Open `https://<IP>`, set the operator password, then **Device → License**.
 7. **Displays** — pick a source for each screen.
 
 **Try is for evaluation, not for a show.** It runs from the USB stick and a temporary copy in memory, so playback is slower and less stable than after Install. Nothing from Try is saved.
 
+### Already installed
+
+If the player is already on an earlier version, write the **0.24.0** ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk. License, hostname, and which source goes to which screen do not carry over from the previous install.
+
 ## Downloads
 
 | File | Purpose |
 |------|---------|
-| `ndi-player-0.22.0.iso` | Try or Install. **Install erases the target disk.** |
-| `ndi-player-0.22.0.iso.sha256` | Verify the image |
-| `ndi-player-0.23.0.tar.gz` | Update package (after a 0.22.0 or 0.22.1 install) |
-| `ndi-player-0.23.0.tar.gz.sha256` | Verify the update package |
-
-Companion packages are on [ndi-player-companion](https://github.com/zabelez/ndi-player-companion/releases), not on this repository.
+| `viso-player-0.24.0.iso` | Try or Install. **Install erases the target disk.** |
+| `viso-player-0.24.0.iso.sha256` | Verify the image |
 
 ## Talk to us
 
 This project grows with the rooms that try it. Join in.
 
-- [Open an issue](https://github.com/zabelez/ndi-player-releases/issues) with the hardware you used, what worked, and what did not.
-- Follow [Facebook](https://www.facebook.com/ndiplayer) and [Instagram](https://www.instagram.com/ndiplayer). Share how you use NDI Player. Photos and short videos from your room, classroom, or control space are welcome.
+- [Open an issue](https://github.com/zabelez/viso-player-releases/issues) with the hardware you used, what worked, and what did not.
+- Follow [Facebook](https://www.facebook.com/ndiplayer) and [Instagram](https://www.instagram.com/ndiplayer). Share how you use Viso Player. Photos and short videos from your room, classroom, or control space are welcome.
 
 We want to learn from real installs. Tell us what is missing.
