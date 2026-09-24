@@ -16,7 +16,7 @@ Sources come from [Viso Gateway](https://github.com/zabelez/viso-gateway-release
 
 This project is **in active development**. If it does not work on your hardware, [open an issue](https://github.com/zabelez/viso-player-releases/issues) with what you used and what you saw.
 
-Current version: **0.25.0**. Machines already on **0.24.0** can apply this from **Device → Updates**. Versions before 0.24.0 still need the USB image.
+Current version: **0.26.0**. Machines already on **0.24.0** or **0.25.0** can apply this from **Device → Updates**. Versions before 0.24.0 still need the USB image.
 
 ## Open the UI
 
@@ -33,6 +33,8 @@ The interface has five tabs: **Displays**, **System Health**, **Network**, **Dev
 </p>
 
 Each connected monitor has its own card. You can send a different Viso source to each screen.
+
+Routes bind by Viso `source_id`. If a Gateway restarts on a new control port, the player rediscovers and rejoins without remapping Displays. With [Gateway 0.3.0](https://github.com/zabelez/viso-gateway-releases/releases/tag/v0.3.0), RTCP timing keeps lip-sync; video stays live and audio plays smoothly.
 
 On the card you can:
 
@@ -115,23 +117,23 @@ Generate a token here. It is shown once. Send it as `Authorization: Bearer`. The
 
 ## Install and update
 
-**0.25.0** is the current USB image. Machines already on **0.24.0** can apply it from **Device → Updates**, or reinstall from this ISO. Versions **before 0.24.0** cannot take this as an in-place update: write the ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk.
+**0.26.0** is the current USB image. Machines already on **0.24.0** or **0.25.0** can apply it from **Device → Updates**, or reinstall from this ISO. Versions **before 0.24.0** cannot take this as an in-place update: write the ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk.
 
 The picture size is **min(what the player asks, the source, the encoder)**. There is no 1080p60 ceiling. **Highest** asks for the source’s full picture. **Lowest** asks for the 640-wide proxy.
 
-**Update [Viso Gateway](https://github.com/zabelez/viso-gateway-releases/releases/tag/v0.2.0) to 0.2.0 as well.** Player and Gateway share the same fit; an older Gateway will not negotiate correctly with this player.
+**Update [Viso Gateway](https://github.com/zabelez/viso-gateway-releases/releases/tag/v0.3.0) to 0.3.0 as well.** Gateway 0.3.0 keeps High Quality restarts on a stable URL, ships shared A/V timing, and this Player recovers when a cold-start still moves the control port.
 
 ### New machine
 
-1. Download **`viso-player-0.25.0.iso`** and **`viso-player-0.25.0.iso.sha256`** from [Releases](https://github.com/zabelez/viso-player-releases/releases/tag/v0.25.0).
+1. Download **`viso-player-0.26.0.iso`** and **`viso-player-0.26.0.iso.sha256`** from [Releases](https://github.com/zabelez/viso-player-releases/releases/tag/v0.26.0).
 2. Verify the download:
 
    ```bash
    # Linux
-   sha256sum -c viso-player-0.25.0.iso.sha256
+   sha256sum -c viso-player-0.26.0.iso.sha256
 
    # macOS
-   shasum -a 256 -c viso-player-0.25.0.iso.sha256
+   shasum -a 256 -c viso-player-0.26.0.iso.sha256
    ```
 
 3. Write the image to a USB stick (Balena Etcher; Rufus **DD Image** on Windows).
@@ -144,17 +146,17 @@ The picture size is **min(what the player asks, the source, the encoder)**. Ther
 
 ### Already installed
 
-Machines on **0.24.0** can open **Device → Updates** and apply **0.25.0**. License, hostname, and which source goes to which screen stay on the machine.
+Machines on **0.24.0** or **0.25.0** can open **Device → Updates** and apply **0.26.0**. License, hostname, and which source goes to which screen stay on the machine.
 
-Versions **before 0.24.0** still need the USB install. Write the **0.25.0** ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk. License, hostname, and which source goes to which screen do not carry over from that previous install.
+Versions **before 0.24.0** still need the USB install. Write the **0.26.0** ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk. License, hostname, and which source goes to which screen do not carry over from that previous install.
 
 ## Downloads
 
 | File | Purpose |
 |------|---------|
-| `viso-player-0.25.0.iso` | Try or Install. **Install erases the target disk.** |
-| `viso-player-0.25.0.iso.sha256` | Verify the image |
-| `viso-player-0.25.0.tar.gz` | In-place update for machines already on **0.24.0**. |
+| `viso-player-0.26.0.iso` | Try or Install. **Install erases the target disk.** |
+| `viso-player-0.26.0.iso.sha256` | Verify the image |
+| `viso-player-0.26.0.tar.gz` | In-place update for machines already on **0.24.0** or **0.25.0**. |
 
 ## Talk to us
 
