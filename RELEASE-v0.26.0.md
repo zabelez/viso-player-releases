@@ -43,5 +43,3 @@ Open **Device → Updates**, check, and apply **0.26.0**. You do not need to rei
 |------|---------|
 | `viso-player-0.26.0.iso` | `20c9830523f8d1ec1e37659586e589f92386c5bbe3a98b0e79d0c76a870cb082` |
 | `viso-player-0.26.0.tar.gz` | `968214cef6fb3aa441e25976c01777a6950a54c790650a577e808bd03e1621b8` |
-
-> **Staging note:** ISO and OTA hashes filled. Sync public README/RELEASE into `viso-player-releases`, then publish after operator OK.
