@@ -58,5 +58,5 @@ Open **Device → Updates**, check, and apply **0.27.0**. You do not need to rei
 
 | File | SHA-256 |
 |------|---------|
-| `viso-player-0.27.0.iso` | `a4d190575d00565402e96cdd207c5106ed4c9a0d3e726db677d6dc00a43a0ac0` |
-| `viso-player-0.27.0.tar.gz` | `c4f3d29c06ac316544be5db796dfba3844932958b12e1cef7a59d4ce45729f5b` |
+| `viso-player-0.27.0.iso` | `0176256f1fb1f96a2af4351f20ed503281e8fc1895afc7ad6c2166ebdfe92092` |
+| `viso-player-0.27.0.tar.gz` | `b47672bd6d73eed5984aa35189c80cbd993f35f15037549fd0918d8cb80f3a25` |
