@@ -42,5 +42,5 @@ Open **Device → Updates**, check, and apply **0.27.1**. You do not need to rei
 
 | File | SHA-256 |
 |------|---------|
-| `viso-player-0.27.1.iso` | `PENDING` |
-| `viso-player-0.27.1.tar.gz` | `PENDING` |
+| `viso-player-0.27.1.iso` | `acb336c4f0c4a30e9cba6b05490875fe8345b81d2041b8725491bc11d25f68e2` |
+| `viso-player-0.27.1.tar.gz` | `d18700196c60ac7865d05fb5fb5d9c41dbe882ab8bb68073f1f93717fb6798a5` |
