@@ -72,7 +72,7 @@ Each capture device has its own card, with a tab per connector (on the Recorder 
 On the card you can:
 
 - **Name the device.** Click the title. The player remembers every device it has seen, with its name and input settings, across reboots and unplugging. A disconnected device you no longer need can be deleted from its card.
-- **Name the input and turn it on.** An enabled input is published as a `viso://` source that this player and every other player or Gateway can pick like any other source. It follows format changes, cable pulls, and device replugs without editing routes.
+- **Name the input and turn it on.** An enabled input is published as a `viso://` source that this player and every other player or Gateway can pick like any other source. It listens for UDP and TCP on the announced control port, the same way Viso Gateway does. It follows format changes, cable pulls, and device replugs without editing routes.
 - **Watch it live.** Signal, format, encoder, receivers, and dropped frames update in real time.
 - **Choose the quality.** Pick a profile: **Automatic**, **Low latency**, **Best quality**, **Save CPU**, or **Custom**. **Advanced** shows every setting that affects the picture, from scaling and deinterlacing to bitrate and network pacing, with the value in effect next to each one.
 
@@ -97,7 +97,7 @@ From **Maintenance** you can restart playback, reboot the machine, power it off,
 - **Ethernet** — DHCP or a fixed IPv4 address, gateway, and DNS.
 - **Wi-Fi** — scan, connect, disconnect, or forget. Open and WPA2 networks. DHCP or a fixed address on the same adapter.
 - **Hostname** — the name used for `https://<name>.local`. It must be unique on the LAN.
-- **Viso Communication** — groups, extra IPs, an optional Discovery Server, and a toggle for sources running on this player. Apply restarts playback so the new discovery settings take effect.
+- **Viso Communication** — groups, extra IPs, an optional Discovery Server, Transport (**Automatic**, **UDP**, or **TCP**), and a toggle for sources running on this player. Apply restarts playback so the new discovery settings take effect. Each connected display shows UDP or TCP under Connected once that session is carrying the picture.
 
 ## Device
 

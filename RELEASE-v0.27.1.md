@@ -9,6 +9,8 @@ Current USB image: **`viso-player-0.27.1.iso`**. Machines already on **0.24.0**,
 - **UDP.** Only the UDP JOIN. Silence does not open TCP.
 - **TCP.** Connects to the control port immediately and does not send a UDP JOIN. If the connection fails, it tries TCP again.
 - A player with no saved choice uses **Automatic**.
+- **Capture sends TCP.** An HDMI input published by this player listens on the announced control port, the same way Viso Gateway does. Picture and sound go back on that connection. UDP on the same port is unchanged.
+- **Live transport on each display.** Under Connected, the card shows UDP or TCP for the session that is carrying the picture. It appears when the session connects.
 
 ## What is fixed
 
@@ -42,5 +44,5 @@ Open **Device → Updates**, check, and apply **0.27.1**. You do not need to rei
 
 | File | SHA-256 |
 |------|---------|
-| `viso-player-0.27.1.iso` | `acb336c4f0c4a30e9cba6b05490875fe8345b81d2041b8725491bc11d25f68e2` |
-| `viso-player-0.27.1.tar.gz` | `d18700196c60ac7865d05fb5fb5d9c41dbe882ab8bb68073f1f93717fb6798a5` |
+| `viso-player-0.27.1.iso` | `e12130d2480f094ac378fd2ae39100612279cb43a2695ffc628774d854bc50ff` |
+| `viso-player-0.27.1.tar.gz` | `fdb5bae3ed80a42f5cda0444f1ecbe8eb3019c7f71d3c76f2b27c21ae37ce036` |
