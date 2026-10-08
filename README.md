@@ -80,6 +80,10 @@ On Intel graphics, conversion and H.264 run on the GPU, so a 1080p60 input uses 
 
 ## Recording
 
+<p align="center">
+  <img src="images/recording.png" alt="Recording tab — one card per recording, red while that recording is running" width="820">
+</p>
+
 The **Recording** tab records inputs on this player and Viso streams from the network. **Add recording** adds a card for that job: name, source, codec, and quality. Several jobs can run at once, including two recordings of the same source. There is no limit on how many, how long, or how large. **Record all** and **Stop all** sit above the cards. A card turns red while that recording is running.
 
 Each job shows dropped frames: frames the source produced that this recording did not write. No signal is not counted. **Recorded files** lists every file, with the codec and the quality. Play it in the browser, download the MP4, or delete it. A file that is still being written cannot be deleted. A full disk stops that recording and the tab says so.

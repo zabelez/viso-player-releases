@@ -4,6 +4,10 @@ Current USB image: **`viso-player-0.28.0.iso`**. Machines already on **0.24.0**,
 
 ## What is new
 
+<p align="center">
+  <img src="images/recording.png" alt="Recording tab — one card per recording, red while that recording is running" width="820">
+</p>
+
 - **Recording.** Add as many recordings as you need. Each one is a card, with a name, a source, a codec, and a quality. An input and a stream can be recorded at the same time, and the same source can be recorded more than once. There is no limit on count, duration, or resolution. Record all and Stop all sit above the cards. A card turns red while that recording is running.
 - **Inputs and streams.** An input is read from the capture picture before it is published. A stream is received on its own connection, so recording does not take frames away from a display.
 - **Codec and quality.** Automatic, H.264 VA-API, H.264 Quick Sync, or H.264 software, with the same quality profiles as Inputs. The file is a fragmented MP4 with AAC audio.
