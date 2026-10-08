@@ -16,7 +16,7 @@ Sources come from [Viso Gateway](https://github.com/zabelez/viso-gateway-release
 
 This project is **in active development**. If it does not work on your hardware, [open an issue](https://github.com/zabelez/viso-player-releases/issues) with what you used and what you saw.
 
-Current version: **0.27.1**. Machines already on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, or **0.27.0** can apply this from **Device → Updates**. Versions before 0.24.0 still need the USB image.
+Current version: **0.28.0**. Machines already on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, **0.27.0**, or **0.27.1** can apply this from **Device → Updates**. Versions before 0.24.0 still need the USB image.
 
 ## Open the UI
 
@@ -24,7 +24,7 @@ On first boot the screens start black. Press **SPACE** on a display to read the 
 
 Open `https://<player-ip>` or `https://<hostname>.local` and accept the self-signed certificate. The first visit sets an operator password.
 
-The interface has six tabs: **Displays**, **Inputs**, **System Health**, **Network**, **Device**, and **API**.
+The interface has seven tabs: **Displays**, **Inputs**, **Recording**, **System Health**, **Network**, **Device**, and **API**.
 
 ## Displays
 
@@ -77,6 +77,12 @@ On the card you can:
 - **Choose the quality.** Pick a profile: **Automatic**, **Low latency**, **Best quality**, **Save CPU**, or **Custom**. **Advanced** shows every setting that affects the picture, from scaling and deinterlacing to bitrate and network pacing, with the value in effect next to each one.
 
 On Intel graphics, conversion and H.264 run on the GPU, so a 1080p60 input uses a small part of the CPU. A captured input reaches another player's screen in about 70 ms. Use one 1080p60 input per player, and update the players that receive it to 0.27.0 as well. With **Secure Boot** on, the driver does not load and the tab says so.
+
+## Recording
+
+The **Recording** tab records inputs on this player and Viso streams from the network. **Add recording** adds a card for that job: name, source, codec, and quality. Several jobs can run at once, including two recordings of the same source. There is no limit on how many, how long, or how large. **Record all** and **Stop all** sit above the cards. A card turns red while that recording is running.
+
+Each job shows dropped frames: frames the source produced that this recording did not write. No signal is not counted. **Recorded files** lists every file, with the codec and the quality. Play it in the browser, download the MP4, or delete it. A file that is still being written cannot be deleted. A full disk stops that recording and the tab says so.
 
 ## System Health
 
@@ -132,7 +138,7 @@ Generate a token here. It is shown once. Send it as `Authorization: Bearer`. The
 
 ## Install and update
 
-**0.27.1** is the current USB image. Machines already on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, or **0.27.0** can apply it from **Device → Updates**, or reinstall from this ISO. Versions **before 0.24.0** cannot take this as an in-place update: write the ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk.
+**0.28.0** is the current USB image. Machines already on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, **0.27.0**, or **0.27.1** can apply it from **Device → Updates**, or reinstall from this ISO. Versions **before 0.24.0** cannot take this as an in-place update: write the ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk.
 
 The picture size is **min(what the player asks, the source, the encoder)**. There is no 1080p60 ceiling. **Highest** asks for the source’s full picture. **Lowest** asks for the 640-wide proxy.
 
@@ -140,15 +146,15 @@ The picture size is **min(what the player asks, the source, the encoder)**. Ther
 
 ### New machine
 
-1. Download **`viso-player-0.27.1.iso`** and **`viso-player-0.27.1.iso.sha256`** from [Releases](https://github.com/zabelez/viso-player-releases/releases/tag/v0.27.1).
+1. Download **`viso-player-0.28.0.iso`** and **`viso-player-0.28.0.iso.sha256`** from [Releases](https://github.com/zabelez/viso-player-releases/releases/tag/v0.28.0).
 2. Verify the download:
 
    ```bash
    # Linux
-   sha256sum -c viso-player-0.27.1.iso.sha256
+   sha256sum -c viso-player-0.28.0.iso.sha256
 
    # macOS
-   shasum -a 256 -c viso-player-0.27.1.iso.sha256
+   shasum -a 256 -c viso-player-0.28.0.iso.sha256
    ```
 
 3. Write the image to a USB stick (Balena Etcher; Rufus **DD Image** on Windows).
@@ -161,18 +167,18 @@ The picture size is **min(what the player asks, the source, the encoder)**. Ther
 
 ### Already installed
 
-Machines on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, or **0.27.0** can open **Device → Updates** and apply **0.27.1**. License, hostname, and which source goes to which screen stay on the machine.
+Machines on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, **0.27.0**, or **0.27.1** can open **Device → Updates** and apply **0.28.0**. License, hostname, and which source goes to which screen stay on the machine.
 
-Versions **before 0.24.0** still need the USB install. Write the **0.27.1** ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk. License, hostname, and which source goes to which screen do not carry over from that previous install.
+Versions **before 0.24.0** still need the USB install. Write the **0.28.0** ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk. License, hostname, and which source goes to which screen do not carry over from that previous install.
 
 ## Downloads
 
 | File | Purpose |
 |------|---------|
-| `viso-player-0.27.1.iso` | Try or Install. **Install erases the target disk.** |
-| `viso-player-0.27.1.iso.sha256` | Verify the image |
-| `viso-player-0.27.1.tar.gz` | In-place update for machines already on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, or **0.27.0**. |
-| `viso-player-0.27.1.tar.gz.sha256` | Verify the update package |
+| `viso-player-0.28.0.iso` | Try or Install. **Install erases the target disk.** |
+| `viso-player-0.28.0.iso.sha256` | Verify the image |
+| `viso-player-0.28.0.tar.gz` | In-place update for machines already on **0.24.0** through **0.27.1**. |
+| `viso-player-0.28.0.tar.gz.sha256` | Verify the update package |
 
 ## Talk to us
 
