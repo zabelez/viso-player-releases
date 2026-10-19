@@ -16,7 +16,7 @@ Sources come from [Viso Gateway](https://github.com/zabelez/viso-gateway-release
 
 This project is **in active development**. If it does not work on your hardware, [open an issue](https://github.com/zabelez/viso-player-releases/issues) with what you used and what you saw.
 
-Current version: **0.29.1**. Machines already on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, **0.27.0**, **0.27.1**, **0.28.0**, or **0.29.0** can apply this from **Device → Updates**. Versions before 0.24.0 still need the USB image.
+Current version: **0.29.2**. Machines already on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, **0.27.0**, **0.27.1**, **0.28.0**, **0.29.0**, or **0.29.1** can apply this from **Device → Updates**. Versions before 0.24.0 still need the USB image.
 
 ## Open the UI
 
@@ -150,7 +150,7 @@ Generate a token here. It is shown once. Send it as `Authorization: Bearer`. The
 
 ## Install and update
 
-**0.29.0** is the current USB image. Machines already on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, **0.27.0**, **0.27.1**, or **0.28.0** can apply it from **Device → Updates**, or reinstall from this ISO. Versions **before 0.24.0** cannot take this as an in-place update: write the ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk.
+**0.29.2** is the current USB image. Machines already on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, **0.27.0**, **0.27.1**, **0.28.0**, **0.29.0**, or **0.29.1** can apply it from **Device → Updates**, or reinstall from this ISO. Versions **before 0.24.0** cannot take this as an in-place update: write the ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk.
 
 The picture size is **min(what the player asks, the source, the encoder)**. There is no 1080p60 ceiling. **Highest** asks for the source’s full picture. **Lowest** asks for the 640-wide proxy.
 
@@ -158,15 +158,15 @@ The picture size is **min(what the player asks, the source, the encoder)**. Ther
 
 ### New machine
 
-1. Download **`viso-player-0.29.1.iso`** and **`viso-player-0.29.1.iso.sha256`** from [Releases](https://github.com/zabelez/viso-player-releases/releases/tag/v0.29.1).
+1. Download **`viso-player-0.29.2.iso`** and **`viso-player-0.29.2.iso.sha256`** from [Releases](https://github.com/zabelez/viso-player-releases/releases/tag/v0.29.2).
 2. Verify the download:
 
    ```bash
    # Linux
-   sha256sum -c viso-player-0.29.1.iso.sha256
+   sha256sum -c viso-player-0.29.2.iso.sha256
 
    # macOS
-   shasum -a 256 -c viso-player-0.29.1.iso.sha256
+   shasum -a 256 -c viso-player-0.29.2.iso.sha256
    ```
 
 3. Write the image to a USB stick (Balena Etcher; Rufus **DD Image** on Windows).
@@ -179,18 +179,18 @@ The picture size is **min(what the player asks, the source, the encoder)**. Ther
 
 ### Already installed
 
-Machines on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, **0.27.0**, **0.27.1**, **0.28.0**, or **0.29.0** can open **Device → Updates** and apply **0.29.1**. License, hostname, which source goes to which screen, recording jobs, and stream setups stay on the machine.
+Machines on **0.24.0**, **0.25.0**, **0.26.0**, **0.26.1**, **0.27.0**, **0.27.1**, **0.28.0**, **0.29.0**, or **0.29.1** can open **Device → Updates** and apply **0.29.2**. License, hostname, which source goes to which screen, recording jobs, and stream setups stay on the machine.
 
-Versions **before 0.24.0** still need the USB install. Write the **0.29.1** ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk. License, hostname, and which source goes to which screen do not carry over from that previous install.
+Versions **before 0.24.0** still need the USB install. Write the **0.29.2** ISO, boot from USB, and choose **Install Viso Player**. Installing erases the internal disk. License, hostname, and which source goes to which screen do not carry over from that previous install.
 
 ## Downloads
 
 | File | Purpose |
 |------|---------|
-| `viso-player-0.29.1.iso` | Try or Install. **Install erases the target disk.** |
-| `viso-player-0.29.1.iso.sha256` | Verify the image |
-| `viso-player-0.29.1.tar.gz` | In-place update for machines already on **0.24.0** through **0.29.0**. |
-| `viso-player-0.29.1.tar.gz.sha256` | Verify the update package |
+| `viso-player-0.29.2.iso` | Try or Install. **Install erases the target disk.** |
+| `viso-player-0.29.2.iso.sha256` | Verify the image |
+| `viso-player-0.29.2.tar.gz` | In-place update for machines already on **0.24.0** through **0.29.1**. |
+| `viso-player-0.29.2.tar.gz.sha256` | Verify the update package |
 
 ## Talk to us
 
